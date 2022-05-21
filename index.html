@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>3D Vehicle Physics</title>
+    <!-- physics is good -->
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="overlay">
+      <div class="middle">
+        <h1>3D Vehicle Physics</h1>
+        <p>A PyBullet raycast vehicle physics demo.</p>
+        <br>
+        <span id="loading" style="color:yellow;">Loading assets..</span>
+        <div class="louter">
+          <div class="loader" id="prog"></div>
+        </div>
+        </div>
+    </div>
+    <div id="pause" style="display:none;">
+      <div class="middle">
+        <h1>Paused</h1>
+        <br>
+        Click anywhere to resume
+      </div>
+
+    </div>
+    <div id="helper"><div class="inner">
+
+      Use <b>WASD</b> or arrow keys to move.<Br>Press <b>V</b> to flip.<br> Click <b>"X Transmission"</b> to switch drive mode. Press <b>E/Q</b> to change gears. Press <b>R</b> for neutral. <b>Y</b> to cruise. <b>Shift</b> to brake. Change the <b>Power</b> slider to change engine power.<Br>
+      Turn signals: press <b>Z</b> or <b>C</b>. For headlights, press <B>H</b>.
+      <br>
+      <hr>
+      
+      <h1 class="hlp">HELP</h1>
+      </div></div>
+      <div id="gauges">
+        <div id="rpm" class="gauge">
+          <div class="needle" id="rpmn">
+            <div class="tip"></div>
+          </div><br>
+          <span id="gear" class="lbl">D?</span>
+        </div>
+        <div id="speed" class="gauge">
+          <div class="needle" id="speedn">
+            <div class="tip"></div>
+            </div><br>
+            <span class="lbl" id="speedo">0</span>
+          </div>
+        </div>
+    <div id="gui">
+      <div class="inner">
+        <button onclick="window.toggleCar()">Change Car</button><button onclick="window.toggleSun()">Sun</button><button onclick="window.resetTower()">Reset Tower</button><button onclick="window.toggleGraphics()">Graphics</button><hr>
+        <button onclick="window.gearMode(this)">Automatic Transmission</button><br><span id="fps">FPS: 0</span>
+        <br>
+        <label for="sp">Power:<input type="range" min="1" max="65" oninput="window.carSpeed = Number(this.value)"></label>
+        
+
+        </div>
+      </div>
+  
+
+    <div id="speedometer" style="display:none;">
+      <span id="speed">? speed</speed>
+    </div>
+    <canvas id="car" width="637" height="273" style="display:none;"></canvas>
+    <script src="map.perlin.js"></script>
+    <script src="/lib/three.min.js"></script>
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
